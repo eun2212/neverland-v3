@@ -127,6 +127,7 @@ window.neverlandWorld={
  leaveRide(){if(!interior||interior.running||config.forcedRide>=0)return false;Object.assign(player,parkReturn);interior=null;parkReturn=null;keys.clear();return true;},
  sit(){if(!interior||interior.running||interior.ride===3)return false;const d=window.NEVERLAND_INTERIORS[interior.ride];if(Math.hypot(player.x-d.seat[0],player.z-d.seat[1])>1.8)return false;interior.seated=true;player.x=d.seat[0];player.z=d.seat[1];player.eye=1.35;keys.clear();return true;},
  stand(){if(!interior||interior.running||config.forcedRide>=0)return false;interior.seated=false;player.eye=1.65;keys.clear();return true;},
+ scriptedWheelHazard(on){if(!interior||interior.ride!==1)return false;interior.scriptedHazard=!!on;interior.seated=true;interior.running=false;interior.progress=on?.07:0;interiorLast=elapsed;keys.clear();return true;},
  startRide(seconds){if(!interior||!interior.seated||interior.running)return false;interior.running=true;interior.time=0;interior.progress=0;interior.duration=seconds||window.NEVERLAND_INTERIORS[interior.ride].duration;interiorLast=elapsed;keys.clear();return true;},
  unlockInterior(){if(interior)interior.solved=true;},
  setRidePower(value){if(interior)interior.power=Math.max(0,Math.min(100,Number(value)||0));},

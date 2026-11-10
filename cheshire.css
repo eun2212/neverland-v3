@@ -1,0 +1,15 @@
+
+#cheshire-portrait{position:absolute;z-index:2;bottom:12%;height:82%;width:42%;pointer-events:none;transition:left .65s ease,filter .3s;left:50%;transform:translateX(-50%)}
+#cheshire-portrait[hidden]{display:none!important}#cheshire-portrait>div{height:100%;width:100%;background-image:url('cheshire/expressions.webp');background-size:400% 100%;background-position:0 50%;background-repeat:no-repeat;animation:cheshire-breathe 4s ease-in-out infinite}
+#cheshire-portrait[data-expression=guarded]>div{background-position:33.333% 50%}#cheshire-portrait[data-expression=threat]>div{background-position:66.666% 50%}#cheshire-portrait[data-expression=regret]>div{background-position:100% 50%}
+#stage .cast-center{left:50%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-left{left:28%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-right{left:72%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-listener{filter:brightness(.65) saturate(.75)}#stage #keeper{transition:left .65s ease,filter .3s}.cheshire-scene #keeper:not(.cast-right):not(.cast-left):not(.cast-center){visibility:hidden}
+.dialogue-crayon #world-root canvas,.dialogue-crayon .painted-background{filter:url('#crayon-world') saturate(.55);image-rendering:pixelated}.dialogue-crayon #world-root:after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.22;background:repeating-linear-gradient(14deg,#fff6de 0 1px,transparent 1px 5px),repeating-linear-gradient(102deg,#574c39 0 1px,transparent 1px 8px);mix-blend-mode:soft-light}.dialogue-crayon .dialog{z-index:5}.cheshire-scene #speaker{letter-spacing:2px}
+@keyframes cheshire-breathe{50%{transform:translateY(-3px)}}@media(max-width:700px){#cheshire-portrait{width:64%;height:66%;bottom:24%}#stage .cast-left{left:24%!important}#stage .cast-right{left:76%!important}}
+@media(prefers-reduced-motion:reduce){#stage #keeper,#cheshire-portrait{transition:none}#cheshire-portrait>div{animation:none}}
+body.reduce-motion #cheshire-portrait,body.reduce-motion #stage #keeper{transition:none}body.reduce-motion #cheshire-portrait>div{animation:none}
+
+#cheshire-portrait{width:auto;aspect-ratio:0.506} @media(max-width:700px){#cheshire-portrait{width:auto;aspect-ratio:0.506}}
+
+body.cheshire-danger #world-root{box-shadow:inset 0 0 80px #a92b31}body.cheshire-danger #world-root:before{content:'재운행 · 문 잠김 · 비상정지 권한 잠금';position:absolute;top:12%;left:5%;z-index:4;color:#fff1d4;background:#852c35;padding:12px;font:16px sans-serif} 
+
+.ending-scene #cheshire-portrait{display:none!important}.cheshire-scene #ride-panel{display:none!important}

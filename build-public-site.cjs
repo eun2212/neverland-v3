@@ -8,5 +8,6 @@ for(const file of new Set(runtime)){const destination=path.join(target,file);fs.
 fs.mkdirSync(path.join(target,'assets'),{recursive:true});
 const assets=fs.readdirSync(path.join(source,'assets')).filter(file=>/\.(webp|wav)$/.test(file)||['keeper-campus.png','1d58883c9e687b99069f.png','174bf17bf4ad207648c0.png'].includes(file));
 for(const file of assets)fs.copyFileSync(path.join(source,'assets',file),path.join(target,'assets',file));
-for(const file of runtime){const content=fs.readFileSync(path.join(source,file),'utf8');for(const match of content.matchAll(/assets\/[A-Za-z0-9_.-]+\.(?:webp|png|wav)/g))if(!fs.existsSync(path.join(target,match[0])))throw Error('Missing asset: '+match[0]);}
+fs.mkdirSync(path.join(target,'cheshire'),{recursive:true});fs.copyFileSync(path.join(source,'cheshire/expressions.webp'),path.join(target,'cheshire/expressions.webp'));
+for(const file of runtime){const content=fs.readFileSync(path.join(source,file),'utf8');for(const match of content.matchAll(/(?:assets|cheshire)\/[A-Za-z0-9_.-]+\.(?:webp|png|wav)/g))if(!fs.existsSync(path.join(target,match[0])))throw Error('Missing asset: '+match[0]);}
 console.log('Prepared '+new Set(runtime).size+' runtime files and '+assets.length+' assets.');
