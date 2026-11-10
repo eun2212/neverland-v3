@@ -3,13 +3,17 @@
 #cheshire-portrait[hidden]{display:none!important}#cheshire-portrait>div{height:100%;width:100%;background-image:url('cheshire/expressions.webp');background-size:400% 100%;background-position:0 50%;background-repeat:no-repeat;animation:cheshire-breathe 4s ease-in-out infinite}
 #cheshire-portrait[data-expression=guarded]>div{background-position:33.333% 50%}#cheshire-portrait[data-expression=threat]>div{background-position:66.666% 50%}#cheshire-portrait[data-expression=regret]>div{background-position:100% 50%}
 #stage .cast-center{left:50%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-left{left:28%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-right{left:72%!important;right:auto!important;transform:translateX(-50%)!important}#stage .cast-listener{filter:brightness(.65) saturate(.75)}#stage #keeper{transition:left .65s ease,filter .3s}.cheshire-scene #keeper:not(.cast-right):not(.cast-left):not(.cast-center){visibility:hidden}
-.dialogue-crayon #world-root canvas,.dialogue-crayon .painted-background{filter:url('#crayon-world') saturate(.55);image-rendering:pixelated}.dialogue-crayon #world-root:after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.22;background:repeating-linear-gradient(14deg,#fff6de 0 1px,transparent 1px 5px),repeating-linear-gradient(102deg,#574c39 0 1px,transparent 1px 8px);mix-blend-mode:soft-light}.dialogue-crayon .dialog{z-index:5}.cheshire-scene #speaker{letter-spacing:2px}
+.cheshire-scene .dialog{z-index:5}.cheshire-scene #speaker{letter-spacing:2px}
 @keyframes cheshire-breathe{50%{transform:translateY(-3px)}}@media(max-width:700px){#cheshire-portrait{width:64%;height:66%;bottom:24%}#stage .cast-left{left:24%!important}#stage .cast-right{left:76%!important}}
 @media(prefers-reduced-motion:reduce){#stage #keeper,#cheshire-portrait{transition:none}#cheshire-portrait>div{animation:none}}
 body.reduce-motion #cheshire-portrait,body.reduce-motion #stage #keeper{transition:none}body.reduce-motion #cheshire-portrait>div{animation:none}
 
 #cheshire-portrait{width:auto;aspect-ratio:0.506} @media(max-width:700px){#cheshire-portrait{width:auto;aspect-ratio:0.506}}
 
-body.cheshire-danger #world-root{box-shadow:inset 0 0 80px #a92b31}body.cheshire-danger #world-root:before{content:'재운행 · 문 잠김 · 비상정지 권한 잠금';position:absolute;top:12%;left:5%;z-index:4;color:#fff1d4;background:#852c35;padding:12px;font:16px sans-serif} 
+body.cheshire-danger #world-root:before{content:'재운행 · 문 잠김 · 비상정지 권한 잠금';position:absolute;top:12%;left:5%;z-index:4;color:#fff1d4;background:#852c35;padding:12px;font:16px sans-serif}
 
 .ending-scene #cheshire-portrait{display:none!important}.cheshire-scene #ride-panel{display:none!important}
+
+#cheshire-companion{position:absolute;left:14px;top:150px;z-index:6;max-width:min(340px,80vw);padding:10px 12px;background:#112c35eb;border:1px solid #aaafc5;border-radius:8px;color:#f5eedb;font:14px/1.5 sans-serif}
+#cheshire-companion[hidden],#cheshire-companion [hidden]{display:none!important}#cheshire-companion p{margin:0 0 8px}#cheshire-companion button{font:inherit;min-height:38px;margin:3px;padding:7px 10px;color:#fff2d3;background:#243d52;border:1px solid #a3aac1;border-radius:5px}#cheshire-companion button:disabled{opacity:.5}#cheshire-bubble{border-left:3px solid #8cadd2;padding-left:8px}
+@media(max-width:700px){#cheshire-companion{top:145px;left:8px;max-width:66vw;font-size:12px;padding:7px}#cheshire-companion button{min-height:36px;padding:5px}}

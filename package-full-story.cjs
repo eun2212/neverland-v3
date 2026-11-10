@@ -4,7 +4,7 @@ let html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 html=html.replace('<link rel="stylesheet" href="full-story.css">',()=>'<style>'+fs.readFileSync(path.join(root,'full-story.css'),'utf8')+'</style>');
 html=html.replace('<link rel="stylesheet" href="position-map.css">',()=>'<style>'+fs.readFileSync(path.join(root,'position-map.css'),'utf8')+'</style>');
 html=html.replace('<link rel="stylesheet" href="carnival-scene.css">',()=>'<style>'+fs.readFileSync(path.join(root,'carnival-scene.css'),'utf8')+'</style>');
-for(const file of ['carnival-layout.js','ride-interiors.js','vendor/three.min.js','bgm.js','world.js','ride-interior-scenes.js','dreamcore-stage.js','reality-fracture.js','keeper-veins.js','carnival-scene.js','story-core.js','story-3d.js','keeper-story.js','lost-boys.js','ending-decor.js','ending-dialogue.js','ending-world.js','dialogue-controls.js','game-tools.js','cheshire.js']){
+for(const file of ['carnival-layout.js','ride-interiors.js','vendor/three.min.js','bgm.js','world.js','ride-interior-scenes.js','dreamcore-stage.js','reality-fracture.js','keeper-veins.js','carnival-scene.js','story-core.js','story-3d.js','keeper-story.js','lost-boys.js','ending-decor.js','ending-dialogue.js','ending-world.js','dialogue-controls.js','game-tools.js','cheshire.js','danger-flash.js']){
  const script=fs.readFileSync(path.join(root,file),'utf8').replace(/<\/script/gi,'<\\/script');
  html=html.replace('<script src="'+file+'"></script>',()=>'<script>'+script+'</script>');
 }
@@ -13,6 +13,7 @@ html=html.replace('<link rel="stylesheet" href="ending-world.css">',()=>'<style>
 html=html.replace('<link rel="stylesheet" href="dialogue-controls.css">',()=>'<style>'+fs.readFileSync(path.join(root,'dialogue-controls.css'),'utf8')+'</style>');
 html=html.replace('<link rel="stylesheet" href="game-tools.css">',()=>'<style>'+fs.readFileSync(path.join(root,'game-tools.css'),'utf8')+'</style>');
 html=html.replace('<link rel="stylesheet" href="cheshire.css">',()=>'<style>'+fs.readFileSync(path.join(root,'cheshire.css'),'utf8')+'</style>');
+html=html.replace('<link rel="stylesheet" href="danger-flash.css">',()=>'<style>'+fs.readFileSync(path.join(root,'danger-flash.css'),'utf8')+'</style>');
 const assets=new Map();
 html=html.replace(/(?:assets|cheshire)\/[A-Za-z0-9_.-]+\.(?:webp|png|jpg|svg|wav)/g,file=>{
  if(!assets.has(file)){const mime=({'.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.wav':'audio/wav'})[path.extname(file)];assets.set(file,'data:'+mime+';base64,'+fs.readFileSync(path.join(root,file)).toString('base64'));}

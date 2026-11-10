@@ -1,0 +1,6 @@
+/* Two gentle red pulses over the entire viewport; never intercept input. */
+#danger-flash{position:fixed;inset:0;z-index:1000;pointer-events:none;background:#ff413b;opacity:0}
+#danger-flash.is-flashing{animation:neverland-danger-flash 1.6s ease-out both}
+@keyframes neverland-danger-flash{0%,28%,48%,82%,100%{opacity:0}10%{opacity:.24}62%{opacity:.18}}
+@media(prefers-reduced-motion:reduce){#danger-flash.is-flashing{animation:none;opacity:0}}
+body.reduce-motion #danger-flash.is-flashing{animation:none;opacity:0}
